@@ -1,5 +1,6 @@
 <script lang="ts">
   import Card from "./Card.svelte";
+  import Button from "./Button.svelte";
 
   let text = "";
   let rating = 10;
@@ -20,7 +21,7 @@
         bind:value={text}
         placeholder="Tell us something that keeps you coming back"
       />
-      <!-- <Button disabled={btnDisabled} type="submit">Send</Button> -->
+      <Button disabled={btnDisabled} type="submit">Send</Button>
     </div>
     {#if message}
       <div class="message">
