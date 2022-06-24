@@ -1,6 +1,7 @@
 <script lang="ts">
   import FeebackList from "./components/FeebackList.svelte";
   import FeedbackStats from "./components/FeedbackStats.svelte";
+
   let feedback = [
     {
       id: 1,
@@ -21,7 +22,7 @@
 
   $: average = feedback.reduce((a, b) => a + b.rating, 0) / feedback.length; // reactive value i.e. will change based on dependent value
 
-  const deleteFeedback = (e) => {
+  const deleteFeedback = (e: any) => {
     feedback = feedback.filter((item) => item.id !== e.detail);
   };
 </script>
