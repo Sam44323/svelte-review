@@ -21,7 +21,7 @@
 </script>
 
 <main />
-<FeebackList />
+<FeebackList feedbackData={feedback} />
 
 <style>
 </style>
