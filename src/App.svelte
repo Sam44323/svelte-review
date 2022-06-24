@@ -25,10 +25,6 @@
   $: count = feedback.length; // reactive value i.e. will change based on dependent value
   $: average = feedback.reduce((a, b) => a + b.rating, 0) / count;
 
-  const deleteFeedback = (e: any) => {
-    feedback = feedback.filter((item) => item.id !== e.detail);
-  };
-
   const addFeedback = (e: any) => {
     feedback = [e.detail, ...feedback];
   };
@@ -37,7 +33,7 @@
 <main class="container">
   <FeedbackForm on:submit-data={addFeedback} />
   <FeedbackStats {count} {average} />
-  <FeebackList feedbackData={feedback} on:delete-feedback={deleteFeedback} />
+  <FeebackList />
 </main>
 
 <style>

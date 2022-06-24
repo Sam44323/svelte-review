@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from "svelte";
+  import { FeedbackStore } from "../stores";
   import Card from "./Card.svelte";
   export let item: {
     id: number;
@@ -7,10 +7,10 @@
     text: string;
   };
 
-  const dispatch = createEventDispatcher();
-
   const handleDelete = (id: number) => {
-    dispatch("delete-feedback", id);
+    FeedbackStore.update((curr) => {
+      return curr.filter((item) => item.id !== id);
+    });
   };
 </script>
 
