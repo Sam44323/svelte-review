@@ -1,12 +1,15 @@
 <script lang="ts">
   import Card from "./Card.svelte";
   import Button from "./Button.svelte";
+  import RatingSelect from "./RatingSelect.svelte";
 
   let text = "";
   let min = 10;
   let rating = 10;
   let btnDisabled = true;
   let message: string;
+
+  const handleSelect = (e: any) => (rating = e.detail);
 </script>
 
 <Card>
@@ -14,7 +17,7 @@
     <h2>How would you rate your service with us?</h2>
   </header>
   <form>
-    <!-- <RatingSelect on:rating-select={handleSelect} /> -->
+    <RatingSelect on:rating-select={handleSelect} />
     <div class="input-group">
       <input
         type="text"
