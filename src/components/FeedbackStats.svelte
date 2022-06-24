@@ -8,4 +8,10 @@
   <h4>Ratings Average : {average}</h4>
 </div>
 
-<style></style>
+<style>
+  .feedback-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
