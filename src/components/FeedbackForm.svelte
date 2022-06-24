@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { v4 as uuid } from "uuid";
   import Card from "./Card.svelte";
   import Button from "./Button.svelte";
   import RatingSelect from "./RatingSelect.svelte";
@@ -24,7 +25,7 @@
   const handleSubmit = () => {
     if (text.trim().length > min) {
       const feedback = {
-        id: Date.now(),
+        id: uuid(),
         text,
         rating: +rating,
       };
