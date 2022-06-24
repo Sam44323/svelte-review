@@ -3,16 +3,10 @@
   import FeebackList from "./components/FeebackList.svelte";
   import FeedbackStats from "./components/FeedbackStats.svelte";
   import FeedbackForm from "./components/FeedbackForm.svelte";
-
-  const addFeedback = (e: any) => {
-    FeedbackStore.update((curr) => {
-      return [e.detail, ...curr];
-    });
-  };
 </script>
 
 <main class="container">
-  <FeedbackForm on:submit-data={addFeedback} />
+  <FeedbackForm />
   <FeedbackStats />
   <FeebackList />
 </main>

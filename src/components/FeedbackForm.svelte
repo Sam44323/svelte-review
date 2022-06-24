@@ -1,6 +1,6 @@
 <script lang="ts">
   import { v4 as uuid } from "uuid";
-  import { createEventDispatcher } from "svelte";
+  import { FeedbackStore } from "../stores";
 
   import Card from "./Card.svelte";
   import Button from "./Button.svelte";
@@ -11,8 +11,6 @@
   let rating = 10;
   let btnDisabled = true;
   let message: string;
-
-  const dispatch = createEventDispatcher();
 
   const handleSelect = (e: any) => (rating = e.detail);
 
@@ -33,7 +31,9 @@
         text,
         rating: +rating,
       };
-      dispatch("submit-data", feedback);
+      FeedbackStore.update((curr: any) => {
+        return [feedback, ...curr];
+      });
       text = "";
     }
   };

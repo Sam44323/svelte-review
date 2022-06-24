@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { FeedbackStore } from "src/stores";
+  import { FeedbackStore } from "../stores";
   $: count = $FeedbackStore.length; // reactive value i.e. will change based on dependent value
   $: average = $FeedbackStore.reduce((a, b) => a + b.rating, 0) / count;
 </script>
