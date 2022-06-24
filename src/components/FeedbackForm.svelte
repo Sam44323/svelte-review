@@ -33,8 +33,8 @@
         text,
         rating: +rating,
       };
-      console.log(feedback);
       dispatch("submit-data", feedback);
+      text = "";
     }
   };
 </script>
