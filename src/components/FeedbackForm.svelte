@@ -5,7 +5,7 @@
 
   let text = "";
   let min = 10;
-  let rating = 10;
+  let rating = 0;
   let btnDisabled = true;
   let message: string;
 
