@@ -18,12 +18,16 @@
     },
   ];
 
+  $: count = feedback.length; // reactive value i.e. will change based on dependent value
+  $: average = feedback.reduce((a, b) => a + b.rating, 0) / count;
+
   const deleteFeedback = (e) => {
     feedback = feedback.filter((item) => item.id !== e.detail);
   };
 </script>
 
 <main class="container">
+  {count}
   <FeebackList feedbackData={feedback} on:delete-feedback={deleteFeedback} />
 </main>
 
