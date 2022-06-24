@@ -20,8 +20,9 @@
   ];
 </script>
 
-<main />
-<FeebackList feedbackData={feedback} />
+<main class="container">
+  <FeebackList feedbackData={feedback} />
+</main>
 
 <style>
 </style>
