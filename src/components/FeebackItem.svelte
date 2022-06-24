@@ -1,6 +1,8 @@
 <script lang="ts">
   import { FeedbackStore } from "../stores";
+
   import Card from "./Card.svelte";
+
   export let item: {
     id: number;
     rating: number;

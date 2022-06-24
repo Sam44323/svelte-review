@@ -1,32 +1,17 @@
 <script lang="ts">
+  import { FeedbackStore } from "./stores";
   import FeebackList from "./components/FeebackList.svelte";
   import FeedbackStats from "./components/FeedbackStats.svelte";
   import FeedbackForm from "./components/FeedbackForm.svelte";
-  import Button from "./components/Button.svelte";
+  import FeebackItem from "./components/FeebackItem.svelte";
 
-  let feedback = [
-    {
-      id: 1,
-      rating: 10,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
-    },
-    {
-      id: 2,
-      rating: 9,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
-    },
-    {
-      id: 3,
-      rating: 8,
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.",
-    },
-  ];
-
-  $: count = feedback.length; // reactive value i.e. will change based on dependent value
-  $: average = feedback.reduce((a, b) => a + b.rating, 0) / count;
+  $: count = $FeedbackStore.length; // reactive value i.e. will change based on dependent value
+  $: average = $FeedbackStore.reduce((a, b) => a + b.rating, 0) / count;
 
   const addFeedback = (e: any) => {
-    feedback = [e.detail, ...feedback];
+    FeedbackStore.update((curr) => {
+      return [e.detail, ...curr];
+    });
   };
 </script>
 
