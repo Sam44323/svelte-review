@@ -1,14 +1,17 @@
 <script lang="ts">
   import { v4 as uuid } from "uuid";
+  import { createEventDispatcher } from "svelte";
   import Card from "./Card.svelte";
   import Button from "./Button.svelte";
   import RatingSelect from "./RatingSelect.svelte";
 
   let text = "";
   let min = 10;
-  let rating = 0;
+  let rating = 10;
   let btnDisabled = true;
   let message: string;
+
+  const dispatch = createEventDispatcher();
 
   const handleSelect = (e: any) => (rating = e.detail);
 
@@ -29,6 +32,8 @@
         text,
         rating: +rating,
       };
+      console.log(feedback);
+      dispatch("submit-data", feedback);
     }
   };
 </script>

@@ -2,6 +2,7 @@
   import FeebackList from "./components/FeebackList.svelte";
   import FeedbackStats from "./components/FeedbackStats.svelte";
   import FeedbackForm from "./components/FeedbackForm.svelte";
+  import Button from "./components/Button.svelte";
 
   let feedback = [
     {
@@ -27,10 +28,14 @@
   const deleteFeedback = (e: any) => {
     feedback = feedback.filter((item) => item.id !== e.detail);
   };
+
+  const addFeedback = (e: any) => {
+    feedback = [e.detail, ...feedback];
+  };
 </script>
 
 <main class="container">
-  <FeedbackForm />
+  <FeedbackForm on:submit-data={addFeedback} />
   <FeedbackStats {count} {average} />
   <FeebackList feedbackData={feedback} on:delete-feedback={deleteFeedback} />
 </main>
