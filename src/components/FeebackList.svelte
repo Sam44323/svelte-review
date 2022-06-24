@@ -7,7 +7,7 @@
 
 <main>
   {#each feedbackData as fData (fData.id)}
-    <FeebackItem item={fData} />
+    <FeebackItem item={fData} on:delete-feedback />
   {/each}
 </main>
 
