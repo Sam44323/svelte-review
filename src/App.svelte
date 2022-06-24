@@ -2,7 +2,6 @@
   import FeebackList from "./components/FeebackList.svelte";
   import FeedbackStats from "./components/FeedbackStats.svelte";
   import FeedbackForm from "./components/FeedbackForm.svelte";
-  import FeebackItem from "./components/FeebackItem.svelte";
 
   let feedback = [
     {
