@@ -5,7 +5,7 @@
 
 <div id="feedback-stats">
   <h4>{count} Reviews</h4>
-  <h4>{average} Average</h4>
+  <h4>Ratings Average : {average}</h4>
 </div>
 
 <style></style>

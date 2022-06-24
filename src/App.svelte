@@ -29,7 +29,7 @@
 </script>
 
 <main class="container">
-  {average}
+  <FeedbackStats {count} {average} />
   <FeebackList feedbackData={feedback} on:delete-feedback={deleteFeedback} />
 </main>
 
