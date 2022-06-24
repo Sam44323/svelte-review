@@ -1,5 +1,6 @@
 <script lang="ts">
   import FeebackList from "./components/FeebackList.svelte";
+  import FeedbackStats from "./components/FeedbackStats.svelte";
   let feedback = [
     {
       id: 1,
