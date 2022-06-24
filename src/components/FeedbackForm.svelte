@@ -3,9 +3,9 @@
   import Button from "./Button.svelte";
 
   let text = "";
+  let min = 10;
   let rating = 10;
   let btnDisabled = true;
-  let min = 10;
   let message: string;
 </script>
 
