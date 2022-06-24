@@ -20,13 +20,23 @@
       btnDisabled = false;
     }
   };
+
+  const handleSubmit = () => {
+    if (text.trim().length > min) {
+      const feedback = {
+        id: Date.now(),
+        text,
+        rating: +rating,
+      };
+    }
+  };
 </script>
 
 <Card>
   <header>
     <h2>How would you rate your service with us?</h2>
   </header>
-  <form>
+  <form on:submit|preventDefault={handleSubmit}>
     <RatingSelect on:rating-select={handleSelect} />
     <div class="input-group">
       <input
