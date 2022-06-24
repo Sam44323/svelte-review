@@ -10,6 +10,16 @@
   let message: string;
 
   const handleSelect = (e: any) => (rating = e.detail);
+
+  const handleInput = () => {
+    if (text.trim().length <= min) {
+      message = `Text must be at least ${min} characters`;
+      btnDisabled = true;
+    } else {
+      message = null;
+      btnDisabled = false;
+    }
+  };
 </script>
 
 <Card>
@@ -21,6 +31,7 @@
     <div class="input-group">
       <input
         type="text"
+        on:input={handleInput}
         bind:value={text}
         placeholder="Tell us something that keeps you coming back"
       />
