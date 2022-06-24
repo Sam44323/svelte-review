@@ -20,7 +20,8 @@
     },
   ];
 
-  $: average = feedback.reduce((a, b) => a + b.rating, 0) / feedback.length; // reactive value i.e. will change based on dependent value
+  $: count = feedback.length; // reactive value i.e. will change based on dependent value
+  $: average = feedback.reduce((a, b) => a + b.rating, 0) / count;
 
   const deleteFeedback = (e: any) => {
     feedback = feedback.filter((item) => item.id !== e.detail);
